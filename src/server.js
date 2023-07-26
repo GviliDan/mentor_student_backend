@@ -10,22 +10,10 @@ const server = http.createServer(app);
 const channelName = 'myChannel';
 
 require('dotenv').config();
-const allowedOrigins = ['https://mentor-student-coding-frontend.vercel.app', 'http://localhost:3000'];
 
 // Set up middleware
 const corsOptions = {
-<<<<<<< HEAD
-  origin: function (origin, callback) {
-    // Check if the origin is in the allowed origins list or if it's not defined (e.g., a local request)
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-=======
-  origin: 'mentor-student-coding-frontend.vercel.app',
->>>>>>> my-feature-branch
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   // Allow WebSocket connections
